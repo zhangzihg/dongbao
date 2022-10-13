@@ -5,6 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>msb-dongbao-common</module>
+        <module>msb-dongbao-api</module>
+        <module>msb-dongbao-service</module>
+        <module>msb-dongbao-application</module>
+        <module>msb-dongbao-generator</module>
+        <module>msb-dongbao-job</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
