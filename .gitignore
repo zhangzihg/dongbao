@@ -32,16 +32,27 @@ ild/
 target/
 !.mvn/wrapper/maven-wrapper.jar
 
+msb-dongbao-mall-parent/.idea
+msb-dongbao-mall-parent/**/.mvn/
+
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+
 ######################################################################
 # IDE
 
 ### STS ###
-#.apt_generated
-#.classpath
-#.factorypath
-#.project
-#.settings
-#.springBeans
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
 
 ### IntelliJ IDEA ###
 .idea
@@ -50,19 +61,23 @@ target/
 *.ipr
 
 ### NetBeans ###
-#nbproject/private/
-#build/*
-#nbbuild/
-#dist/
-#nbdist/
-#.nb-gradle/
-#*/logs/
+nbproject/private/
+build/*
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+*/logs/
 
 ######################################################################
 # Others
 *.log
 *.xml.versionsBackup
 
-!*ild/*.java
-!*ild/*.html
-!*ild/*.xml
+#!*ild/*.java
+#!*ild/*.html
+#!*ild/*.xml
+
+# msb
+!**/src/main/**/build/
+!**/src/test/**/build/
