@@ -10,3 +10,7 @@ mybatis-plus:
     - classpath*:com/zzh/dongbao/usm/mapper/xml/*.xml
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0

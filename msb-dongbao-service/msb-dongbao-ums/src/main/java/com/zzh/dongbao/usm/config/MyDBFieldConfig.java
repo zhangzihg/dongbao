@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
+//mybatis插件
 @Component
 public class MyDBFieldConfig implements MetaObjectHandler {
 
