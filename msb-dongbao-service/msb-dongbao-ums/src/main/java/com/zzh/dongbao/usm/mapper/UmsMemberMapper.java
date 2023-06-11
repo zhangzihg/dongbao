@@ -2,6 +2,7 @@ package com.zzh.dongbao.usm.mapper;
 
 import com.zzh.dongbao.usm.entity.UmsMember;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -9,8 +10,9 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author zzh
- * @since 2022-10-15
+ * @since 2023-06-07
  */
+@Repository
 public interface UmsMemberMapper extends BaseMapper<UmsMember> {
 
 }

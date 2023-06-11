@@ -1,31 +1,16 @@
-package com.zzh.dongbao.usm.entity;
+package com.zzh.ums.api.dto;
 
-import com.baomidou.mybatisplus.annotation.FieldFill;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
 import java.util.Date;
-
-/**
- * <p>
- * 后台用户表
- * </p>
- *
- * @author zzh
- * @since 2023-06-07
- */
 @Data
-@EqualsAndHashCode(callSuper = false)
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UmsMember implements Serializable {
-
-    private static final long serialVersionUID = 1L;
-
-    @TableId(value = "id")
+public class UmsMemberDTO {
     private Long id;
 
     private String username;
@@ -55,13 +40,11 @@ public class UmsMember implements Serializable {
     /**
      * 创建时间
      */
-      @TableField(fill = FieldFill.INSERT)
     private Date gmtCreate;
 
     /**
      * 修改时间
      */
-      @TableField(fill = FieldFill.INSERT_UPDATE)
     private Date gmtModified;
 
     /**
@@ -73,6 +56,4 @@ public class UmsMember implements Serializable {
      * 帐号启用状态：0->禁用；1->启用
      */
     private Integer status;
-
-
 }

@@ -3,14 +3,36 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>msb-dongbao-application</artifactId>
         <groupId>com.zzh</groupId>
+        <artifactId>msb-dongbao-application</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.zzh.dongbao.protal.web</groupId>
     <artifactId>msb-dongbao-portal-web</artifactId>
+    <dependencies>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-tx</artifactId>-->
+<!--            <version>5.3.23</version>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>com.zzh</groupId>
+            <artifactId>msb-dongbao-ums-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zzh.dongbao.ums</groupId>
+            <artifactId>msb-dongbao-ums</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zzh</groupId>
+            <artifactId>msb-dongbao-ums-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 
 </project>
