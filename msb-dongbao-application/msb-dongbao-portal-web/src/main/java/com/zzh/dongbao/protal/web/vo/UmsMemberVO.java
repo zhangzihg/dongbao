@@ -15,7 +15,7 @@ public class UmsMemberVO {
 
     @NotNull
     private SexEnum sex;
-
+    @NotBlank
     private String password;
 
     /**

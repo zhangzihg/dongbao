@@ -1,6 +1,7 @@
 package com.zzh.dongbao.protal.web.controller;
 
 import com.zzh.common.base.result.ResultWarpper;
+import com.zzh.common.util.md5.PasswordEncodeAndMatchUtil;
 import com.zzh.dongbao.protal.web.vo.UmsMemberVO;
 import com.zzh.ums.api.dto.UmsMemberDTO;
 import com.zzh.ums.api.service.UmsMemberService;
@@ -43,6 +44,8 @@ public class UmsController {
     public ResultWarpper<String> registerUser(@RequestBody @Validated UmsMemberVO umsMemberVO){
         UmsMemberDTO umsMemberDTO = new UmsMemberDTO();
         BeanUtils.copyProperties(umsMemberVO,umsMemberDTO);
+        //密码脱敏
+        umsMemberDTO.setPassword(PasswordEncodeAndMatchUtil.encode(umsMemberDTO.getPassword()));
         int i = this.umsMemberService.registerUer(umsMemberDTO);
         if(i > 0){
             return ResultWarpper.setSuccessResult().build();

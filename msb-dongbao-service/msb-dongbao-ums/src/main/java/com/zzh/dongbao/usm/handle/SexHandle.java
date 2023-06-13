@@ -2,6 +2,7 @@ package com.zzh.dongbao.usm.handle;
 
 import com.zzh.common.base.enums.SexEnum;
 import org.apache.ibatis.type.JdbcType;
+import org.apache.ibatis.type.MappedJdbcTypes;
 import org.apache.ibatis.type.MappedTypes;
 import org.apache.ibatis.type.TypeHandler;
 import org.springframework.stereotype.Component;
@@ -13,16 +14,15 @@ import java.sql.SQLException;
 
 /**
  * 处理性别的枚举，使其在数据库存的是0,1这种数字
+ * MappedTypes的value是枚举类Class
  */
-@MappedTypes(value = String.class)
-//@MappedJdbcTypes(value = JdbcType.VARCHAR)
+@MappedTypes(value = SexEnum.class)
+@MappedJdbcTypes(value = JdbcType.VARCHAR)
 @Component
 public class SexHandle implements TypeHandler<SexEnum> {
 
     @Override
     public void setParameter(PreparedStatement preparedStatement, int i, SexEnum sexEnum, JdbcType jdbcType) throws SQLException {
-//        preparedStatement.setByte(i,(byte) sexEnum.getCode());
-//        preparedStatement.setInt(i,sexEnum.getCode());
         preparedStatement.setString(i,String.valueOf(sexEnum.getCode()));
     }
 
