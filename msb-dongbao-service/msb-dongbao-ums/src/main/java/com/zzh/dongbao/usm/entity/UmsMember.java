@@ -3,6 +3,7 @@ package com.zzh.dongbao.usm.entity;
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.zzh.common.base.enums.SexEnum;
 import lombok.*;
 
 import java.io.Serializable;
@@ -74,5 +75,7 @@ public class UmsMember implements Serializable {
      */
     private Integer status;
 
+
+    private SexEnum sex;
 
 }

@@ -14,4 +14,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UmsMemberService  {
     int registerUer(UmsMemberDTO user);
+
+    UmsMemberDTO getUserByName(String userName);
 }

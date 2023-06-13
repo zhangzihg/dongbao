@@ -7,8 +7,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.zzh"})
-//@EnableTransactionManagement
-//@EnableCaching
 @Slf4j
 public class MsbDongbaoProtalWeb {
     public static void main(String[] args) {

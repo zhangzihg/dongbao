@@ -1,5 +1,6 @@
 package com.zzh.dongbao.usm.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zzh.dongbao.usm.entity.UmsMember;
@@ -28,6 +29,14 @@ public class UmsMemberServiceImpl extends ServiceImpl<UmsMemberMapper, UmsMember
     public int registerUer(UmsMemberDTO user) {
         UmsMember member = new UmsMember();
         BeanUtils.copyProperties(user,member);
-        return this.save(member)?1:0;
+        return umsMemberMapper.insert(member) > 0?1:0;
+    }
+
+    @Override
+    public UmsMemberDTO getUserByName(String userName) {
+        UmsMember one = this.getOne(new LambdaQueryWrapper<UmsMember>().eq(UmsMember::getUsername, userName));
+        UmsMemberDTO tmp = new UmsMemberDTO();
+        BeanUtils.copyProperties(one,tmp);
+        return tmp;
     }
 }

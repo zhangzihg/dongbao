@@ -1,5 +1,6 @@
 package com.zzh.ums.api.dto;
 
+import com.zzh.common.base.enums.SexEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -56,4 +57,6 @@ public class UmsMemberDTO {
      * 帐号启用状态：0->禁用；1->启用
      */
     private Integer status;
+
+    private SexEnum sex;
 }

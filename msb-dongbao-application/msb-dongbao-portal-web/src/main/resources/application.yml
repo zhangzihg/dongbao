@@ -26,3 +26,14 @@ spring:
     password: 123456
     url: jdbc:mysql://localhost:3308/dongbao_test?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
+#mybatisplus的配置
+mybatis-plus:
+  mapper-locations:
+    - classpath*:com/zzh/dongbao/usm/mapper/xml/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  type-handlers-package: com.zzh.dongbao.usm.handle
