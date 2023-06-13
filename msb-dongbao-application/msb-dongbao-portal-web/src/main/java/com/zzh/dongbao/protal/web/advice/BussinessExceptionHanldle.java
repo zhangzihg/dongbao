@@ -1,6 +1,8 @@
 package com.zzh.dongbao.protal.web.advice;
 
+import com.zzh.common.base.enums.StatusCodeEnum;
 import com.zzh.common.base.result.ResultWarpper;
+import io.jsonwebtoken.ExpiredJwtException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -27,5 +29,11 @@ public class BussinessExceptionHanldle extends GolbalExceptionHandle{
         }
         String substring = sb.toString().substring(0, sb.length() - 1);
         return ResultWarpper.setSuccessResult().data(substring).build();
+    }
+
+    @ExceptionHandler(ExpiredJwtException.class)
+    public ResultWarpper handleTockenException(ExpiredJwtException ex){
+        log.debug(ex.getMessage());
+        return ResultWarpper.builder().code(StatusCodeEnum.TOKEN_EXPORED.getCode()).msg(StatusCodeEnum.TOKEN_EXPORED.getMsg()).build();
     }
 }

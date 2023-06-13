@@ -6,6 +6,7 @@ public enum  StatusCodeEnum {
     NULLPOINT_EX(6668,"空指针异常"),
     Arithmetic_EX(6669,"算数异常"),
     USERNAME_EXISTS(1000,"用户名已经存在"),
+    TOKEN_EXPORED(1001,"token已经失效"),
     PASSWORD_CHK(100,"用户名或者密码不正确");
 
     private int code;

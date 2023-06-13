@@ -2,6 +2,7 @@ package com.zzh.dongbao.protal.web.controller;
 
 import com.zzh.common.base.result.ResultWarpper;
 import com.zzh.common.util.md5.PasswordEncodeAndMatchUtil;
+import com.zzh.dongbao.protal.web.vo.UmsMemberLoginVO;
 import com.zzh.dongbao.protal.web.vo.UmsMemberVO;
 import com.zzh.ums.api.dto.UmsMemberDTO;
 import com.zzh.ums.api.service.UmsMemberService;
@@ -51,6 +52,21 @@ public class UmsController {
             return ResultWarpper.setSuccessResult().build();
         } else {
           return ResultWarpper.setFailedResult().build();
+        }
+    }
+
+    @PostMapping("login")
+    public ResultWarpper login(@RequestBody @Validated UmsMemberLoginVO umsMemberLoginVO){
+        UmsMemberDTO userByName = umsMemberService.getUserByName(umsMemberLoginVO.getUsername());
+        if(null == userByName){
+            return ResultWarpper.setFailedResult().msg("无该用户").build();
+        } else {
+            if(PasswordEncodeAndMatchUtil.parseAndMatch(umsMemberLoginVO.getPassword(),userByName.getPassword())){
+                return ResultWarpper.setSuccessResult().msg("登录成功").build();
+            } else {
+                return ResultWarpper.setFailedResult().msg("用户名或者密码错误").build();
+
+            }
         }
     }
 }
